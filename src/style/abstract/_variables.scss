@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;800;900&family=Noto+Serif+SC:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+SC:wght@200&display=swap');
+
+@font-face {
+  font-family: 'Encorpada Classic';
+  src: url('@/fonts/encorpada/encorpada-classic.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('@/fonts/avenir/AvenirLTStd-Black.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('@/fonts/avenir/AvenirLTStd-Roman.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('@/fonts/avenir/AvenirLTStd-Book.otf') format('opentype');
+  font-weight: lighter;
+}
+
+$fontfamily: 'Noto Serif TC', 'Noto Serif', 'Hiragino Sans GB', arial,
+  sans-serif;
+$fontfamily--2: 'Noto Sans CJK TC', 'Noto Sans CJK', 'Hiragino Sans GB', arial,
+  sans-serif;
+$fontfamily--3: 'Encorpada Classic', 'Noto Sans CJK TC', 'Noto Sans CJK',
+  'Hiragino Sans GB', arial, sans-serif;
+$fontfamily--4: 'Avenir', 'Noto Sans CJK TC', 'Noto Sans CJK',
+  'Hiragino Sans GB', arial, sans-serif;
+// basic
+$blue: #009bd7;
+$blue--2: #60bce3;
+$blue--3: #0067b8;
+$blue--4: #b7c3c5;
+$blue--5: #718084;
+$orange: #f17700;
+$pink: #f195be;
+$pink--2: #e24f95;
+$gray: #d9d9d9;
+$gray--2: #e6e5de;
+$gray--3: #efeeea;
+$gray--4: #f1f1ed;
+$gray--5: #babab5;
+$gray--6: #f0f1eb;
+$gray--7: #deddd9;
+$gray--light: #d1cecb;
+$gray--dark: #686869;
+$grey: #898889;
+$white: #ffffff;
+$white--2: #f5f5f5;
+$yellow: #fdd71e;
+$yellow--2: #ffd500;
+$green: #00a237;
+$black: #303030;
+$brown: #7e6f57;
+
+// main
+$shadow: #00000025;
+$background--1: #e6e5de;
+$text: #686869;
+$text-light--1: #898889;
+$text-light--2: #9b8b70;
+$text--1: #9b8b70;
+$text--2: #69696a;
+$text-box--1: #9b8b7022;
+$text-box--2: #69696a22;
+
+//font size
+$f__10: em(10);
+$f__12: em(12);
+$f__14: em(14);
+$f__16: em(16);
+$f__18: em(18);
+$f__20: em(20);
+$f__24: em(24);
+$f__26: em(26);
+$f__30: em(30);
+$f__36: em(36);

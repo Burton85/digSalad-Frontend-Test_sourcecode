@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@media (min-width: 0px) {
+  .page {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+    .cell {
+      @include flex-jcc-atc;
+      border: $black solid 2px;
+      background: radial-gradient(
+        circle,
+        rgba(113, 81, 95, 1) 81%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      &.flashing {
+        animation: flashing 0.5s linear alternate infinite;
+      }
+      .ball {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: $black solid 1px;
+        background-color: #a5f12b;
+        opacity: 1;
+        &.goRight {
+          animation: moveRight 2s 1s linear forwards;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 768px) {
+}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@media (min-width: 0px) {
+  #app {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    // max-width: em(640);
+    margin: auto;
+    color: $text;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: $fontfamily;
+    background-color: $background--1;
+    overflow: hidden;
+  }
+  html,
+  body {
+    touch-action: none;
+    overflow: hidden;
+    background-color: $white;
+    &::-webkit-scrollbar {
+      width: 0em (20);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $grey !important;
+    }
+  }
+  p {
+    font-family: $fontfamily;
+  }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 768px) {
+}
