@@ -2,17 +2,17 @@
 @media (min-width: 0px) {
   .quote {
     width: 90%;
-    padding: em(80) em(150) em(150) em(80);
+    padding: em(80) em(50) em(150) em(50);
     position: absolute;
     left: 0;
     bottom: em(-300);
     display: flex;
     align-items: center;
+    flex-direction: column;
     border-radius: em(50);
     border-top-left-radius: 0;
-    background: url('./assets/quote-bg.png') no-repeat top/100% 100%;
+    background: url('./assets/quote-bg.png') no-repeat top/auto 100%;
     &__intro {
-      margin-right: em(50);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -72,4 +72,11 @@
 @media (min-width: 375px) {
 }
 @media (min-width: 768px) {
+  .quote {
+    padding: em(80) em(150) em(150) em(80);
+    flex-direction: row;
+    &__intro {
+      margin-right: em(50);
+    }
+  }
 }

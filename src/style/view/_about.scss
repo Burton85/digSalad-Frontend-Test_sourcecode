@@ -2,22 +2,24 @@
 @media (min-width: 0px) {
   .about {
     width: 100%;
-    padding: em(125) em(250);
+    padding: em(125) em(50);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     .title {
       margin-bottom: em(60);
     }
     &__line {
       position: absolute;
       display: block;
-      height: em(60);
+      height: em(100);
       width: em(1);
       top: 0;
       left: 50%;
       background-color: $black;
+      animation: moveBottom502 1.5s infinite linear alternate-reverse;
     }
     &__content {
       margin: em(30) 0;
@@ -29,9 +31,16 @@
         letter-spacing: 1px;
       }
     }
+    img,
+    iframe {
+      width: 100%;
+    }
   }
 }
 @media (min-width: 375px) {
 }
 @media (min-width: 768px) {
+  .about {
+    padding: em(125) em(250);
+  }
 }

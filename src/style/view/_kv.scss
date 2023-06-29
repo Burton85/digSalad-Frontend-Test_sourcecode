@@ -9,12 +9,11 @@
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
     background: url('./assets/kv.png') no-repeat top/100%;
-
     &__content {
       z-index: 1;
       position: absolute;
       top: em(190);
-      left: em(220);
+      left: em(120);
     }
     &__logo {
       width: em(160);
@@ -118,8 +117,11 @@
   }
 }
 @media (min-width: 375px) {
-  .kv {
-  }
 }
 @media (min-width: 768px) {
+  .kv {
+    &__content {
+      left: em(220);
+    }
+  }
 }

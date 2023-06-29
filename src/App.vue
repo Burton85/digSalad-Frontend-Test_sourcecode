@@ -33,7 +33,7 @@
       </a>
     </div>
     <div :class="isMenuTop ? 'menu__bar' : 'menu__bar menu__bar--scrolled'">
-      <div class="menu__logo">
+      <div class="menu__logo" @click="scrollToTop">
         <img
           v-show="!isMenuActive"
           src="./assets/logo-color.svg"
@@ -127,13 +127,21 @@ export default {
         isMenuTop.value = false;
       }
     });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
     return {
       state,
       increment,
       isLoading,
       isMenuActive,
       switchMenu,
-      isMenuTop
+      isMenuTop,
+      scrollToTop
     };
   },
   mounted() {
@@ -146,6 +154,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'wow.js/css/libs/animate.css';
 @import './style/main.scss';
 /* #app {
   padding-bottom: v-bind(appPadding);

@@ -2,6 +2,7 @@
 import { onMounted, inject } from 'vue';
 import { safariHacker } from '../helper/safariHacker.js';
 import { YTPlayer } from '../helper/YTPlayer.js';
+import WOW from 'wow.js';
 import { defineComponent } from 'vue';
 import { Carousel, Navigation, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
@@ -16,16 +17,36 @@ onMounted(() => {
   let scaleNum = document.querySelector('.kv').clientHeight / 280;
   document.querySelector('.kv__video').style.transform =
     'scale(' + scaleNum + ')';
+
+  console.log(WOW);
+  var wow = new WOW({
+    boxClass: 'wow', // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset: 0, // distance to the element when triggering the animation (default is 0)
+    mobile: true, // trigger animations on mobile devices (default is true)
+    live: true, // act on asynchronously loaded content (default is true)
+    callback: function (box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null, // optional scroll container selector, otherwise use window,
+    resetAnimation: true // reset animation on end (default is true)
+  });
+  wow.init();
 });
 </script>
 <template>
   <div class="container">
     <div class="section kv">
       <div class="kv__content">
-        <h1>
+        <h1 class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0s">
           <img class="kv__logo" src="../assets/logo.svg" alt="digiSalad" />
         </h1>
-        <h2 class="kv__slogan">
+        <h2
+          class="wow bounceInLeft kv__slogan"
+          data-wow-duration="2s"
+          data-wow-delay="1s"
+        >
           WE CREATE<br />
           AMAZING<br />
           DIGITAL EXPERIENCES
@@ -75,7 +96,11 @@ onMounted(() => {
       </div>
     </div>
     <div class="section ingradient">
-      <div class="awards">
+      <div
+        class="wow bounceInRight awards"
+        data-wow-duration="2s"
+        data-wow-delay="0s"
+      >
         <div class="awards__left">
           <h3 class="title title--3">AWARDS</h3>
           <div class="awards__content">
@@ -118,7 +143,10 @@ onMounted(() => {
       </div>
       <div class="services">
         <div class="service">
-          <h4 class="service__icon service__icon--1"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--1"
+            data-wow-delay="0s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -128,7 +156,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--2"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--2"
+            data-wow-delay="1s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -138,7 +169,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--3"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--3"
+            data-wow-delay="2s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -148,7 +182,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--4"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--4"
+            data-wow-delay="0s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -158,7 +195,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--5"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--5"
+            data-wow-delay="1s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -168,7 +208,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--6"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--6"
+            data-wow-delay="2s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -178,7 +221,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--7"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--7"
+            data-wow-delay="0s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -188,7 +234,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--8"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--8"
+            data-wow-delay="1s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -198,7 +247,10 @@ onMounted(() => {
           <a href="javascript:;" class="service__btn">VIEW MORE</a>
         </div>
         <div class="service">
-          <h4 class="service__icon service__icon--9"></h4>
+          <h4
+            class="wow rollIn center service__icon service__icon--9"
+            data-wow-delay="2s"
+          ></h4>
           <h4 class="service__title">UX Design</h4>
           <p class="service__content">
             Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras
@@ -209,7 +261,11 @@ onMounted(() => {
         </div>
       </div>
       <a href="#" class="ingradient__link">VIEW MORE DIGISALAD’S INGRADIENTS</a>
-      <div class="quote">
+      <div
+        class="wow bounceInLeft quote"
+        data-wow-duration="2s"
+        data-wow-delay="0s"
+      >
         <div class="quote__intro">
           <img class="quote__head" src="../assets/head.png" alt="head" />
           <h4>Tony Ng</h4>
