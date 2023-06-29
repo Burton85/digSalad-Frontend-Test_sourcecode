@@ -1,1 +1,0 @@
-# digiSalad-frondend-test
