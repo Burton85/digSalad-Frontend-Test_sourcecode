@@ -6,19 +6,18 @@
     width: 100%;
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
-    // max-width: em(640);
     margin: auto;
     color: $text;
     font-size: 18px;
     letter-spacing: 2px;
-    font-family: $fontfamily;
-    background-color: $background--1;
+    font-family: $fontfamily-main;
+    background-color: $gray;
     overflow: hidden;
   }
   html,
   body {
-    touch-action: none;
-    overflow: hidden;
+    // touch-action: none;
+    // overflow: hidden;
     background-color: $white;
     &::-webkit-scrollbar {
       width: 0em (20);
@@ -28,7 +27,7 @@
     }
   }
   p {
-    font-family: $fontfamily;
+    font-family: $fontfamily-main;
   }
 }
 @media (min-width: 375px) {

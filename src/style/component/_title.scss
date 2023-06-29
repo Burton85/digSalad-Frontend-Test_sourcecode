@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@media (min-width: 0px) {
+  .title {
+    position: relative;
+    color: $gray--dark;
+    font-family: $fontfamily-main;
+    font-weight: 700;
+    letter-spacing: em(4);
+    display: inline;
+    font-size: em(24);
+    &::after {
+      display: block;
+      content: '';
+      width: 120%;
+      height: em(20);
+      transform: translateX(-10%);
+      background: url('./assets/title-dash.png') no-repeat center/100%;
+    }
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: em(6);
+      height: em(6);
+      right: em(-12);
+      top: em(10);
+      background: url('./assets/title-dot.png') no-repeat center/100%;
+    }
+
+    &--2 {
+      color: $white;
+      &::after {
+        background: url('./assets/title-dash-2.png') no-repeat center/100%;
+      }
+    }
+    &--3 {
+      &::after {
+        background: url('./assets/title-dash-3.png') no-repeat center/100%;
+      }
+    }
+  }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 768px) {
+}

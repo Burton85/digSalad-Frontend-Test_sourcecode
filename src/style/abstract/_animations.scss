@@ -19,11 +19,27 @@
 
 @keyframes moveRight {
   0% {
-    transform: translateX(0);
+    transform: translateX(-10%);
     // margin-left: 0;
   }
   100% {
-    transform: translateX(500px);
+    transform: translateX(20%);
     // margin-left: 500px;
+  }
+}
+@keyframes moveBottom {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+@keyframes moveBottom50 {
+  0% {
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    transform: translate(-50%, 30%);
   }
 }

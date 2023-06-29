@@ -1,4 +1,4 @@
-// @import './abstract/function';
+@import './abstract/function';
 @import './abstract/variables';
 @import './abstract/mixin';
 @import './abstract/animations';
@@ -8,7 +8,14 @@
 @import './normalize/typography';
 @import './normalize/utilities';
 
-@import './component/nav';
+@import './component/menu';
 @import './component/infinite';
+@import './component/title';
+@import './component/btn';
 
-@import './view/page';
+@import './view/kv';
+@import './view/about';
+@import './view/ingradient';
+@import './view/awards.scss';
+@import './view/quote.scss';
+@import './view/projects.scss';

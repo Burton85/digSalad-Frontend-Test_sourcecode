@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@media (min-width: 0px) {
+  .kv {
+    position: relative;
+    width: 100%;
+    height: em(940);
+    overflow: hidden;
+    background-color: black;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    &__content {
+      z-index: 1;
+      position: absolute;
+      top: em(190);
+      left: em(220);
+    }
+    &__logo {
+      width: em(160);
+    }
+    &__slogan {
+      color: white;
+      font-size: em(30);
+      font-weight: 700;
+      line-height: 2;
+      letter-spacing: em(8);
+      margin-top: em(30);
+      &::before {
+        z-index: -1;
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 8px;
+        bottom: em(10);
+        left: -1%;
+        background-color: $blue;
+      }
+    }
+    &__sideLine {
+      position: absolute;
+      left: em(62);
+      top: 30%;
+      p {
+        color: $white;
+        font-weight: 700;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 120%;
+        left: calc(50% - 2px);
+        width: 2px;
+        height: em(113);
+        background-color: $white;
+        animation: moveBottom 1.5s infinite linear;
+      }
+    }
+    &__video {
+      position: absolute;
+      top: -150px;
+      left: -150px;
+      width: 680px;
+      height: 380px;
+      overflow: hidden;
+      transform-origin: top left;
+      &::after {
+        content: '';
+        display: block;
+        z-index: 999;
+        position: absolute;
+        width: 680px;
+        height: 390px;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      iframe {
+        position: absolute;
+        top: -5px;
+      }
+    }
+    &__scroll-tips {
+      @include flex-jcc-atc-col;
+      position: absolute;
+      left: 50%;
+      bottom: em(100);
+      transform: translateX(-50%);
+      animation: moveBottom50 1.5s infinite linear alternate-reverse;
+
+      img {
+        width: em(65);
+        height: em(65);
+        margin-bottom: em(10);
+      }
+      p {
+        color: $white;
+        font-size: em(14);
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: em(130);
+        width: em(1);
+        bottom: em(-160);
+        left: 50%;
+        background-color: $white;
+      }
+    }
+  }
+}
+@media (min-width: 375px) {
+  .kv {
+  }
+}
+@media (min-width: 768px) {
+}

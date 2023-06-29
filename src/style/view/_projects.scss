@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@media (min-width: 0px) {
+  .projects {
+    width: 100%;
+    padding: em(200) em(100);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('./assets/projects-bg.png') no-repeat center/100%;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: em(450);
+      text-align: left;
+      color: $white;
+      p {
+        font-size: em(16);
+        line-height: 1.5;
+        letter-spacing: 1px;
+      }
+    }
+    &__img {
+      position: relative;
+      display: inline-flex;
+      margin-right: em(60);
+      img {
+        width: em(450);
+      }
+      .btn {
+        z-index: 9;
+        position: absolute;
+        bottom: em(-60);
+        right: em(-50);
+        width: em(250);
+        height: em(120);
+        padding-bottom: em(10);
+        &::after {
+          top: unset;
+        }
+      }
+    }
+    &__container {
+      width: 100%;
+    }
+    &__title {
+      padding: em(16) 0;
+      position: relative;
+      display: inline;
+      font-size: em(32);
+      color: $white;
+      margin: em(20) 0;
+      font-weight: 700;
+      letter-spacing: em(3);
+      &::after {
+        position: absolute;
+        width: 100%;
+        left: em(20);
+        top: em(14);
+        height: em(4);
+        background-color: $blue;
+      }
+      span {
+        top: 0%;
+        position: absolute;
+        z-index: 9;
+      }
+    }
+    &__label {
+      font-size: em(16);
+      font-weight: 700;
+      letter-spacing: em(2);
+    }
+    .carousel {
+      width: 100%;
+      &__item {
+        position: relative;
+        min-height: 200px;
+        width: 100%;
+        font-size: 20px;
+        padding-bottom: em(50);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+      }
+
+      &__prev,
+      &__next {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: $blue;
+        color: $white;
+      }
+      &__prev {
+        left: em(-30);
+      }
+      &__next {
+        right: em(-30);
+      }
+    }
+  }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 768px) {
+}

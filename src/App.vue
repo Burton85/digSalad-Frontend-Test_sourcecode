@@ -2,11 +2,64 @@
   <metainfo>
     <template v-slot:title="{ content }">{{ content }}</template>
   </metainfo>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <br />
   <transition name="fade">
     <Loading v-if="isLoading"></Loading>
   </transition>
+  <nav :class="isMenuActive ? 'menu menu--open' : 'menu'">
+    <div
+      :class="
+        isMenuActive
+          ? 'menu__container menu__container--open'
+          : 'menu__container'
+      "
+    >
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/aboutus.png" alt="aboutus" />
+      </a>
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/careers.png" alt="careers" />
+      </a>
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/services.png" alt="services" />
+      </a>
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/works.png" alt="works" />
+      </a>
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/insights.png" alt="insights" />
+      </a>
+      <a class="menu__item" href="javascript:;">
+        <img src="./assets/menu/contact.png" alt="contact" />
+      </a>
+    </div>
+    <div :class="isMenuTop ? 'menu__bar' : 'menu__bar menu__bar--scrolled'">
+      <div class="menu__logo">
+        <img
+          v-show="!isMenuActive"
+          src="./assets/logo-color.svg"
+          alt="digiSalad"
+        />
+        <img v-show="isMenuActive" src="./assets/logo.svg" alt="digiSalad" />
+      </div>
+      <div class="menu__sideBtn">
+        <a class="menu__start">
+          <p>START YOUR PROJECT</p>
+        </a>
+        <div
+          @click="switchMenu()"
+          :class="
+            isMenuActive
+              ? 'menu--trigger active'
+              : isMenuTop
+              ? 'menu--trigger'
+              : 'menu--trigger menu--trigger-scrolled'
+          "
+        >
+          <div class="short"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
   <router-view></router-view>
 </template>
 
@@ -28,21 +81,8 @@ export default {
     function increment() {
       state.count++;
     }
-
-    // Add meta info
-    // The object passed into useMeta is user configurable
-    // const { meta } = useMeta({
-    //   title: 'My Title',
-    // })
-
-    // watchEffect(() => {
-    //   const counterValue = counter.value
-    //   meta.description = `Counted ${counterValue} times`
-    // })
-
-    // Or use a computed prop
     const computedMeta = computed(() => ({
-      title: 'My Title' + state.count,
+      title: 'Front-End-Developer-Test',
       description: `Counted ${state.count} times`,
       meta: [
         { charset: 'utf-8' },
@@ -71,30 +111,29 @@ export default {
     }));
     useMeta(computedMeta);
 
-    // const { meta, onRemoved } = useMeta(computedMeta)
+    const isMenuActive = ref<boolean>(false);
+    function switchMenu() {
+      console.log('switchMenu');
+      isMenuActive.value = !isMenuActive.value;
+    }
 
-    // onRemoved(() => {
-    //   // Do something as soon as this metadata is removed,
-    //   // eg because the component instance was destroyed
-    // })
-
-    // Get the currently used metainfo
-    // const metadata = useActiveMeta()
-
-    // watch(metadata, (newValue) => {
-    //   // metadata was updated, do something
-    // })
-    // useMeta({
-    //   title: 'My Example App',
-    //   htmlAttrs: {
-    //     lang: 'cn',
-    //     amp: true
-    //   }
-    // })
+    const isMenuTop = ref<boolean>(true);
+    window.addEventListener('scroll', function () {
+      var scrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollPosition == 0) {
+        isMenuTop.value = true;
+      } else {
+        isMenuTop.value = false;
+      }
+    });
     return {
       state,
       increment,
-      isLoading
+      isLoading,
+      isMenuActive,
+      switchMenu,
+      isMenuTop
     };
   },
   mounted() {
