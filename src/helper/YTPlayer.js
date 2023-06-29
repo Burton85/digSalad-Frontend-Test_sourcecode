@@ -1,18 +1,15 @@
 export function YTPlayer(_dom, _id) {
   let player;
-  if (YT.Player == undefined) {
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    tag.onload = () => {
-      // alert('YT is Loaded');
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  tag.onload = () => {
+    console.log('YT is Loaded');
+    setTimeout(() => {
       onYouTubeIframeAPIReady();
-    };
-  } else {
-    // alert('YT is not undeifend');
-    onYouTubeIframeAPIReady();
-  }
+    }, 100);
+  };
   function onYouTubeIframeAPIReady() {
     if (YT.Player) {
       player = new YT.Player(_dom, {
