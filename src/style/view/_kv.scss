@@ -5,9 +5,11 @@
     width: 100%;
     height: em(940);
     overflow: hidden;
-    background-color: black;
+    background: black;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
+    background: url('./assets/kv.png') no-repeat top/100%;
+
     &__content {
       z-index: 1;
       position: absolute;

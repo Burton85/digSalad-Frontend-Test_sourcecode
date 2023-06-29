@@ -13,7 +13,6 @@ onMounted(() => {
   setLoading(false);
   safariHacker(document.querySelector('#app'));
   const YTPlayerObj = new YTPlayer('player', '8_4JRK4QkqU');
-  YTPlayerObj.onYouTubeIframeAPIReady();
   let scaleNum = document.querySelector('.kv').clientHeight / 280;
   document.querySelector('.kv__video').style.transform =
     'scale(' + scaleNum + ')';
