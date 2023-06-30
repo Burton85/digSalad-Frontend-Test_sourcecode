@@ -156,6 +156,7 @@ export default {
 <style lang="scss">
 @import 'wow.js/css/libs/animate.css';
 @import './style/main.scss';
+@import url('https://use.typekit.net/wel8ibk.css');
 /* #app {
   padding-bottom: v-bind(appPadding);
 } */
